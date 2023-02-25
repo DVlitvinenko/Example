@@ -1,3 +1,4 @@
+using System.Text;
 using static Metods;
 public class ex002_prog
 {
@@ -7,12 +8,10 @@ public static void ex002()
 int [] array = CreateArray(Input("Введите размер массива: "));
 //заполняем случайно
 FillArray(array);
-//вывод массива
-WriteArray(array);
-Console.WriteLine();
+ArrayToFile("File1_Ex002.txt", array);
 //поиск и замена одинаковых+-
 FindNumberInArrayAndReplase(array);
-//вывод массива
-WriteArray(array);
+//запись в файл (для теста метода записи)
+ArrayToFile("File2_Ex002.txt", array);
 }
 }

@@ -1,3 +1,4 @@
+using System.Text;
 public class Metods
 {
   // 1. Создание массива
@@ -43,7 +44,32 @@ public static void WriteArray (int []NameArray)
   }
 }
 
+// Вывод массива в строку stringBuilder
 
+public static void WriteArrayInStringBuilder (int []NameArray)
+{
+    StringBuilder text = new();
+    int index = 0;
+    while (index < NameArray.Length)
+    {
+      text.Append(NameArray[index] + " ");
+      index++;
+    }
+  System.Console.WriteLine(text);
+}
+
+// запись массива в файл
+
+public static void ArrayToFile(string fileName, int []NameArray)
+{
+  StringBuilder text = new();
+  for(int i = 0; i < NameArray.Length; i++)
+  {
+    text.Append(NameArray[i] + " ");
+  }
+  File.WriteAllText(fileName, text.ToString());
+  Console.WriteLine("Запись в файл" + fileName + "успешно завершена.");
+}
 
 //поиск и замена одинаковых+-
 
@@ -63,6 +89,14 @@ public static void FindNumberInArrayAndReplase(int [] array)
     }
   }
 
+}
+// 3.2 ввод данных рандомно
+
+public static int Rundom (int min, int max)
+{
+  int result = 0;
+  result = new Random().Next(min, max);
+  return result;
 }
 }
 
